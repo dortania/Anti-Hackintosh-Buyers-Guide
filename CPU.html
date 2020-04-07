@@ -1,0 +1,453 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CPU · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="GPU.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="CPU.html">
+            
+                <a href="CPU.html">
+            
+                    
+                    CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="GPU.html">
+            
+                <a href="GPU.html">
+            
+                    
+                    GPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Motherboard.html">
+            
+                <a href="Motherboard.html">
+            
+                    
+                    Motherboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Storage.html">
+            
+                <a href="Storage.html">
+            
+                    
+                    Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="RAM.html">
+            
+                <a href="RAM.html">
+            
+                    
+                    RAM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Cooler.html">
+            
+                <a href="Cooler.html">
+            
+                    
+                    Cooler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Networking.html">
+            
+                <a href="Networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Wireless.html">
+            
+                <a href="Wireless.html">
+            
+                    
+                    Wireless
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="PSU.html">
+            
+                <a href="PSU.html">
+            
+                    
+                    Power Supply
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Case.html">
+            
+                <a href="Case.html">
+            
+                    
+                    Case
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="ThermalPaste.html">
+            
+                <a href="ThermalPaste.html">
+            
+                    
+                    Thermal Paste
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >CPU</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="cpus-to-avoid">CPUs to avoid:</h2>
+<p>While AMD CPUs can work but we advise against them due to numerous issues still plaguing them as they&apos;re not natively supported. They require quite a bit more work to get setup but for those who like would prefer AMD there is the <a href="https://vanilla.amd-osx.com" target="_blank">AMD Vanilla Guide</a>. </p>
+<p>Common issues with AMD:</p>
+<ul>
+<li>Adobe Products don&apos;t always work and there is no fix for lightroom at the moment<ul>
+<li>some fixes can be found here: <a href="https://adobe.amd-osx.com/" target="_blank">Adobe Fixes</a></li>
+<li>Do note these fixes just disable functionality, they&apos;re not real fixes</li>
+</ul>
+</li>
+<li>Virtual Machine running off of AppleHV&apos;s framework will not work(ie: Parallels 15)<ul>
+<li>VirtualBox works fine as it doesn&apos;t use AppleHV</li>
+</ul>
+</li>
+<li>Docker broken<ul>
+<li>Docker toolbox is based off of VirtualBox, many feautures are unavailble with this</li>
+</ul>
+</li>
+<li>Xcode AppleWatch simulator is broken in Catalina<ul>
+<li>Mojave works fine</li>
+</ul>
+</li>
+<li>Microphone input is not availble with AppleALC requiring VoodooHDA(quite a bit worse audio quality and overall instability)</li>
+<li>Audio Drift issues on Ryzen APUs(G series Chips)<ul>
+<li>USB DAC is only fix besides new CPU</li>
+</ul>
+</li>
+<li>Difficult to setup Sleep(or impossible on some systems)</li>
+<li>No CPU Power Management</li>
+<li>Not all USB ports work on some boards<ul>
+<li>This is due to not being assigned in ACPI, you need to manually add them in your DSDT</li>
+</ul>
+</li>
+<li>Delayed updates</li>
+<li><strong>3rd Gen Threadripper doesn&apos;t work at all</strong></li>
+</ul>
+<p>AMD CPUs:</p>
+<ul>
+<li>AMD Ryzen 1000 Series</li>
+<li>AMD Ryzen 2000 Series</li>
+<li>AMD Ryzen 3000 Series</li>
+<li>AMD Athlon</li>
+<li>AMD ThreadRipper</li>
+<li>AMD FX Series</li>
+</ul>
+<p>With Intel, the thanks to most of the CPUs being quite similar they have support when the CPU is spoofed to a supported model. The only downside is that the iGPU rarely work on Atom/Pentium/Celeron these models meaning a cheap iGPU Hackintosh is impossible with these CPUs. Regarding X99/LGA 2011-V3 CPUs, there&apos;s the issue that these CPUs were never shipped in a real Mac so quite a few issues are present when running macOS on these systems. Avoid if possible</p>
+<p><strong>Dual Socket User Note</strong>: Do note that the macOS kernel only supports a maximum of 64 threads. So for baller setups please be aware. And for dual socket users, you will need to use <a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip" target="_blank">AppleMCEReporterDisabler</a> in macOS Catalina</p>
+<ul>
+<li>Intel Atoms</li>
+<li>Intel Celerons</li>
+<li>Intel Pentiums</li>
+<li>Intel X79/LGA 2011</li>
+<li>Intel X99/LGA 2011-V3</li>
+<li>Intel X299/LGA-2066</li>
+</ul>
+<h2 id="unsupported-cpus">Unsupported CPUs</h2>
+<p>So with outright unsupported CPUs, you&apos;re split into 2 camps: Either too old to run or too new that patches aren&apos;t supported</p>
+<p><strong>Too old to run</strong>:</p>
+<p>This mainly concists of CPUs that are missing the SSE4.2 instruction set required for Mojave and newer, you can get around this by replacing the telemetry plugin but not ideal. See <a href="https://github.com/khronokernel/trashOS" target="_blank">trashOS repo</a> for more info</p>
+<ul>
+<li>Wolfdale (Intel Core2 Duo series)<ul>
+<li>E7xxx</li>
+<li>E8xxx</li>
+</ul>
+</li>
+<li>Yorkfeild (Intel Core2 Quad series)<ul>
+<li>E8xxx</li>
+<li>E9xxx</li>
+</ul>
+</li>
+</ul>
+<p>Then there&apos;s the CPUs that are missing the SSE4.1 and older instruction sets, with these support is stuck an OS X 10.11 El Capitan</p>
+<p><strong>Too new to run</strong></p>
+<p>Well with this, the only current solution is to run it in a KVM, this is due to the current kernel patches not supporting 19h</p>
+<ul>
+<li>3rd Gen Threadripper<ul>
+<li>3960X</li>
+<li>3970X</li>
+<li>3990X(the macOS kernel doesn&apos;t even support more than 64 threads)</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="GPU.html" class="navigation navigation-next " aria-label="Next page: GPU">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CPU","level":"1.2","depth":1,"next":{"title":"GPU","level":"1.3","depth":1,"path":"GPU.md","ref":"GPU.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"output":"_book","addcssjs":{"css":[],"js":[]},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"CPU.md","mtime":"2020-04-07T17:17:35.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-07T17:18:27.259Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+

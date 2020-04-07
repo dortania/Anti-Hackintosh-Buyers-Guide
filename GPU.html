@@ -1,0 +1,471 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GPU · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Motherboard.html" />
+    
+    
+    <link rel="prev" href="CPU.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="CPU.html">
+            
+                <a href="CPU.html">
+            
+                    
+                    CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="GPU.html">
+            
+                <a href="GPU.html">
+            
+                    
+                    GPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Motherboard.html">
+            
+                <a href="Motherboard.html">
+            
+                    
+                    Motherboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Storage.html">
+            
+                <a href="Storage.html">
+            
+                    
+                    Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="RAM.html">
+            
+                <a href="RAM.html">
+            
+                    
+                    RAM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Cooler.html">
+            
+                <a href="Cooler.html">
+            
+                    
+                    Cooler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Networking.html">
+            
+                <a href="Networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Wireless.html">
+            
+                <a href="Wireless.html">
+            
+                    
+                    Wireless
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="PSU.html">
+            
+                <a href="PSU.html">
+            
+                    
+                    Power Supply
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Case.html">
+            
+                <a href="Case.html">
+            
+                    
+                    Case
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="ThermalPaste.html">
+            
+                <a href="ThermalPaste.html">
+            
+                    
+                    Thermal Paste
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >GPU</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><del>Get an RTX GPU, I want to see people suffer as they slowly realize that they don&apos;t even have support in HighSierra. Let the Nvidia fans die a slow and painful death, let this be a reminder to never cross our lord and saviour Tim Apple</del>
+If you don&apos;t want a headache, stay away from all Nvidia GPUs that aren&apos;t Kepler based. Currently(and likely forever), Turing and Volta GPUs have no support whatsoever in any version of macOS while Pascal and Maxwell have their support stopping in High Sierra while also requiring WebDrivers so they&apos;re not native GPUs(this is important because that means another point of failure)</p>
+<blockquote>
+<p> B-b-but are the drivers out yet?</p>
+</blockquote>
+<p><img src="WebDrivers.gif" alt="WebDrivers"></p>
+<p>For GPUs we recommend, check out the <a href="https://khronokernel-3.gitbook.io/catalina-gpu-buyers-guide/" target="_blank">GPU Buyers Guide</a>
+And for those who are running unsupported GPUs, there&apos;s still hope for you! With my patent pending <a href="https://khronokernel-4.gitbook.io/disable-unsupported-gpus/" target="_blank"><strong>How to disable your unsupported GPU for macOS Guide</strong></a>, even a simpleton like you can experience the glories of Mojave and beyond!</p>
+<blockquote>
+<p>Are there any GPU board partners I should avoid when buying a GPU? </p>
+</blockquote>
+<p>Why I&apos;m glad you asked, most manufactures actually have a pretty good track record with Hackintoshes but there&apos;s 2 specific brands to avoid. While it is possible to install with these GPUs, there still is a high possibility of issues arising like instability and black screens:</p>
+<ul>
+<li>XFX(may work with CSM/legacy mode turned off, make sure it&apos;s in UEFI mode)</li>
+<li>Powercolor</li>
+</ul>
+<p>Note: AMD Navi support is still quite finiky, with WhateverGreen not being updated yet</p>
+<p><strong>GPUs that aren&apos;t supported AT ALL</strong></p>
+<p>Turing</p>
+<ul>
+<li>Titan RTX</li>
+<li>RTX 2080 Ti</li>
+<li>RTX 2080 Super</li>
+<li>RTX 2080</li>
+<li>RTX 2070 Super</li>
+<li>RTX 2070</li>
+<li>RTX 2060 Super</li>
+<li>RTX 2060</li>
+<li>GTX 1660 Ti</li>
+<li>GTX 1660</li>
+<li><p>GTX 1650</p>
+</li>
+<li><p>Quadro RTX 8000</p>
+</li>
+<li>Quadro RTX 6000</li>
+<li>Quadro RTX 5000</li>
+<li>Quadro RTX 4000</li>
+</ul>
+<p>Volta</p>
+<ul>
+<li>Titan V</li>
+<li><p>Titan V CEO Edition</p>
+</li>
+<li><p>Quadro GV100</p>
+</li>
+</ul>
+<p>Lexa</p>
+<ul>
+<li>RX 540/X</li>
+<li>RX 550/X</li>
+</ul>
+<p><strong>GPUs to avoid</strong></p>
+<p>Navi 10</p>
+<ul>
+<li>RX 5700</li>
+<li>RX 5700 XT</li>
+<li>RX 5700 XT 50th Anniversary Edition
+<strong>Note</strong>: Super buggy drivers in 10.15.1</li>
+</ul>
+<p>Pascal</p>
+<ul>
+<li>GTX Titan X(GP 102-400 Pascal core)</li>
+<li>GTX Titan Xp(GP 102-450 Pascal core)</li>
+<li>GTX 1080/Ti</li>
+<li>GTX 1070/Ti</li>
+<li>GTX 1060</li>
+<li>GTX 1050/Ti</li>
+<li><p>GT 1030</p>
+</li>
+<li><p>Quadro P400</p>
+</li>
+<li>Quadro P600</li>
+<li>Quadro P620</li>
+<li>Quadro P1000</li>
+<li>Quadro P2000</li>
+<li>Quadro P4000</li>
+<li>Quadro P5000</li>
+<li>Quadro P6000</li>
+<li>Quadro GP100</li>
+</ul>
+<p>Maxwell</p>
+<ul>
+<li>GTX Titan X(GM 200 Maxwell core)</li>
+<li>GTX 980/ti</li>
+<li>GTX 970</li>
+<li>GTX 960</li>
+<li>GTX 950</li>
+<li>GTX 750/ti</li>
+<li><p>GTX 745</p>
+</li>
+<li><p>Quadro K620</p>
+</li>
+<li>Quadro K1200</li>
+<li>Quadro K220</li>
+<li>Quadro M2000</li>
+<li>Quadro M4000</li>
+<li>Quadro M5000</li>
+<li>Quadro M6000</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CPU.html" class="navigation navigation-prev " aria-label="Previous page: CPU">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Motherboard.html" class="navigation navigation-next " aria-label="Next page: Motherboard">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GPU","level":"1.3","depth":1,"next":{"title":"Motherboard","level":"1.4","depth":1,"path":"Motherboard.md","ref":"Motherboard.md","articles":[]},"previous":{"title":"CPU","level":"1.2","depth":1,"path":"CPU.md","ref":"CPU.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"output":"_book","addcssjs":{"css":[],"js":[]},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"GPU.md","mtime":"2020-04-07T17:17:35.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-07T17:18:27.259Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+
