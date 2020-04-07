@@ -1,5 +1,6 @@
 # Table of contents
 
+* [Anti-Buyer Guide](Anti-Hackintosh-Buyers-Guide.md)
 * [CPU](CPU.md)
 * [GPU](GPU.md)
 * [Motherboard](Motherboard.md)
