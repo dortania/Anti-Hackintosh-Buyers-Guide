@@ -1,3 +1,5 @@
+# CPUs
+
 ## CPUs to avoid:
 
 While AMD CPUs can work but we advise against them due to numerous issues still plaguing them as they're not natively supported. They require quite a bit more work to get setup but for those who like would prefer AMD there is the [AMD Vanilla Guide](https://vanilla.amd-osx.com). 
