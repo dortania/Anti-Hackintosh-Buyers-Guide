@@ -13,6 +13,8 @@ And while not an issue anymore, do note that all of Apple's PCIe drives are 4k s
 * Any eMMC based SSD(Commonly found in netbooks)
 * ~~Samsung PM981~~ (Commonly found in OEM systems like laptops)
    * PM981 has been fixed with [NVMeFix](https://github.com/acidanthera/NVMeFix/releases) ver. 1.0.2
+* Micron 2200S
+   * Many users have report boot issues with this drive
 
 **SSDs to avoid**
 

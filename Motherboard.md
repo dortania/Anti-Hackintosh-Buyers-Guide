@@ -56,9 +56,9 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 ## USB
 
 
-For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work OOB with no other configuartion besides a [USB map](https://usb-map.gitbook.io/project/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benifit from this
+For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work OOB with no other configuration besides a [USB map](https://usb-map.gitbook.io/project/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
-**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://github.com/khronokernel/Opencore-Vanilla-Desktop-Guide/blob/master/AMD/AMD-USB-map.md)
+**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://github.com/dortania/OpenCore-Desktop-Guide/blob/master/AMD/AMD-USB-map.md)
 
 
 
@@ -81,7 +81,7 @@ There are however some boards without supported NVRAm, mainly HEDT and server bo
 
 ## iGPU
 
-So fun part about Coffeelake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://desktop.dortania.ml/extras/gpu-patches.html). Main victims of this:
+So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://desktop.dortania.ml/extras/gpu-patches.html). Main victims of this:
 
 * Z390
 * H370
@@ -121,7 +121,7 @@ With this, main users affected:
 * H370
 * Z390
 
-The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now concidered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be aliviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://desktop.dortania.ml/extras/kalsr-fix)
+The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be aliviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://desktop.dortania.ml/extras/kalsr-fix)
 
 Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completly broken. This Memory Protection takes up half of the avaible space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
 

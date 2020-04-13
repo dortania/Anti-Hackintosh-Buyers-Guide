@@ -11,7 +11,7 @@ Common issues with AMD:
 * Virtual Machine running off of AppleHV's framework will not work(ie: Parallels 15)
    * VirtualBox works fine as it doesn't use AppleHV
 * Docker broken
-   * Docker toolbox is based off of VirtualBox, many feautures are unavailble with this
+   * Docker toolbox is based off of VirtualBox, many features are unavailable with this
 * Xcode AppleWatch simulator is broken in Catalina
    * Mojave works fine
 * Microphone input is not availble with AppleALC requiring VoodooHDA(quite a bit worse audio quality and overall instability)
