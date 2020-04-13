@@ -81,7 +81,7 @@ There are however some boards without supported NVRAm, mainly HEDT and server bo
 
 ## iGPU
 
-So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://desktop.dortania.ml/extras/gpu-patches.html). Main victims of this:
+So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://dortanian.github.io/OpenCore-Desktop-Guide/extras/gpu-patches.html). Main victims of this:
 
 * Z390
 * H370
@@ -121,7 +121,7 @@ With this, main users affected:
 * H370
 * Z390
 
-The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be aliviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://desktop.dortania.ml/extras/kalsr-fix)
+The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be aliviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortanian.github.io/OpenCore-Desktop-Guide/extras/kalsr-fix)
 
 Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completly broken. This Memory Protection takes up half of the avaible space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
 
