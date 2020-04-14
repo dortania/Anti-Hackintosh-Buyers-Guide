@@ -7,7 +7,7 @@ If you don't want a headache, stay away from all Nvidia GPUs that aren't Kepler 
 
 ![WebDrivers](WebDrivers.gif)
 
-For GPUs we recommend, check out the [GPU Buyers Guide](https://dortanian.github.io/GPU-Buyers-Guide/)
+For GPUs we recommend, check out the [GPU Buyers Guide](https://dortania.github.io/GPU-Buyers-Guide/)
 And for those who are running unsupported GPUs, there's still hope for you! With my patent pending [**How to disable your unsupported GPU for macOS Guide**](https://khronokernel-4.gitbook.io/disable-unsupported-gpus/), even a simpleton like you can experience the glories of Mojave and beyond!
 
 > Are there any GPU board partners I should avoid when buying a GPU? 
