@@ -9,7 +9,7 @@ Certain consumer NICs don't have support such as:
 Note: Newer Intel chipsets based off of I211-AT will need the [I211-AT SmallTree kext](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
 
 
-The issues come in when you either involve onboard server NICs or dedicated hardware like Mellanox's MNPA19-XTR 10Gbe NIC. You need to be quite vigilante and see if either the manufactures or the Hackintosh community have developed drivers, or instead, you can take the safe route and grab a 10Gbe Aquantia AQtion AQC-107 NIC as these are shipped in the iMacPro1,1, MacMini8,1 and Macpro7,1 so full native support. Note that [certain brands need patches](https://www.insanelymac.com/forum/topic/330614-aquantia-10-gb-ethernet-support-thread-10132-upwards/)
+The issues come in when you either involve onboard server NICs or dedicated hardware like Mellanox's MNPA19-XTR 10Gbe NIC. You need to be quite vigilante and see if either the manufactures or the Hackintosh community have developed drivers, or instead, you can take the safe route and grab a 10Gbe Aquantia AQtion AQC-107 NIC as these are shipped in the iMacPro1,1, MacMini8,1 and MacPro7,1 so full native support. Note that [certain brands need patches](https://www.insanelymac.com/forum/topic/330614-aquantia-10-gb-ethernet-support-thread-10132-upwards/)
 
 [SmallTree](https://www.small-tree.com/categories/10gb-ethernet-cards/) is the other popular option
 

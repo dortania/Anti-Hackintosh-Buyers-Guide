@@ -14,7 +14,7 @@ Common issues with AMD:
    * Docker toolbox is based off of VirtualBox, many features are unavailable with this
 * Xcode AppleWatch simulator is broken in Catalina
    * Mojave works fine
-* Microphone input is not availble with AppleALC requiring VoodooHDA(quite a bit worse audio quality and overall instability)
+* Microphone input is not available with AppleALC requiring VoodooHDA(quite a bit worse audio quality and overall instability)
 * Audio Drift issues on Ryzen APUs(G series Chips)
    * USB DAC is only fix besides new CPU
 * Difficult to setup Sleep(or impossible on some systems)
@@ -49,7 +49,7 @@ So with outright unsupported CPUs, you're split into 2 camps: Either too old to 
 
 **Too old to run**:
 
-This mainly concists of CPUs that are missing the SSE4.2 instruction set required for Mojave and newer, you can get around this by replacing the telemetry plugin but not ideal. See [trashOS repo](https://github.com/khronokernel/trashOS) for more info
+This mainly consists of CPUs that are missing the SSE4.2 instruction set required for Mojave and newer, you can get around this by replacing the telemetry plugin but not ideal. See [trashOS repo](https://github.com/khronokernel/trashOS) for more info
 
 * Wolfdale (Intel Core2 Duo series)
    * E7xxx

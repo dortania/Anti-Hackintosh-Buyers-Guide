@@ -16,7 +16,7 @@ Why I'm glad you asked, most manufactures actually have a pretty good track reco
 * XFX(may work with CSM/legacy mode turned off, make sure it's in UEFI mode)
 * Powercolor
 
-Note: AMD Navi support is still quite finiky, with WhateverGreen not being updated yet
+Note: AMD Navi support is still quite finicky, with WhateverGreen not being updated yet
 
 **GPUs that aren't supported AT ALL**
 
@@ -53,13 +53,6 @@ Lexa
 * RX 550/X
 
 **GPUs to avoid**
-
-Navi 10
-
-* RX 5700
-* RX 5700 XT
-* RX 5700 XT 50th Anniversary Edition
-**Note**: Super buggy drivers in 10.15.1
 
 Pascal
 

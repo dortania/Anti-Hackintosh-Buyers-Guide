@@ -1,6 +1,6 @@
 # Motherboards
 
-So with motherboards, the main thing to keep in mind is what controller your system is running, specifically:
+So with motherboards, the main thing to keep in mind is what controllers your system is running, specifically:
 
 * Audio Interface Controller
 * Networking Interface Controller (Ethernet)
@@ -21,17 +21,21 @@ And main platform to avoid:
 * X79
 * X99
 * X299
+* C612
+* C621
+* C422
 * B360
 * B365
 * H310
 * H370
 * Z390
 
+
 See below for more info
 
 ## Audio
 
-With audio and ethernet, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
+With audio, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
 
 ##  Ethernet
 
@@ -53,6 +57,8 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 **Note**: Realtek L8200A and RTL8125 are outright unsupported, for a full list see [Networking section](/Networking.md)
 
+**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported
+
 ## USB
 
 
@@ -71,9 +77,10 @@ With NVRAM, things have been mostly fixed for consumer platforms thanks to [SSDT
 * B360
 * H310
 
-There are however some boards without supported NVRAm, mainly HEDT and server boards:
+There are however some boards without supported NVRAM, mainly HEDT and server boards:
 
 * C612
+* C621
 * C422
 * X79
 * X99
@@ -88,15 +95,17 @@ So fun part about Coffee Lake is that Intel changed a lot in how the iGPU displa
 * B360
 * H310
 
+Note that Z370 is not on the list, this is because the board is basically a Z270 so Apple's video map works fine with it
+
 ## RTC vs AWAC
 
-With RTC vs AWAC, macOS ouright won't boot with systems that have their clocks using AWAC and most BIOS GUIs don't even show the option to change it. This is mainly seen in the following:
+With RTC vs AWAC, macOS outright won't boot with systems that have their clocks using AWAC and most BIOS GUIs don't even show the option to change it. This is mainly seen in the following:
 
 * Z390
 * H370
 * B360
 * H310
-* Z370(mainly Gigabyte and AsRock, as they backported the clock. Other boards are fine)
+* Z370(mainly Gigabyte and AsRock, as they back-ported the clock. Other boards are fine)
 * X299(mainly ones released with 10th gen CPUs, AsRock and Gigabyte are the 2 main offenders)
 
 So we need to either:
@@ -112,6 +121,8 @@ You can find more info here on **how** to fix it: [Getting started with ACPI](ht
 With this, main users affected:
 
 * C612 (generally seen in server boards)
+* C621
+* C422
 * X79
 * X99
 * X299
@@ -121,8 +132,8 @@ With this, main users affected:
 * H370
 * Z390
 
-The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be aliviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kalsr-fix)
+The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kalsr-fix)
 
-Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completly broken. This Memory Protection takes up half of the avaible space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
+Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. This Memory Protection takes up half of the available space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
 
 
