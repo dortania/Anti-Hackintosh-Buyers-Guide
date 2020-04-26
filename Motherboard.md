@@ -47,22 +47,24 @@ For ethernet basically all Gigabit NICs are supported(see below for more info)
    * For I211-AT which is commonly found on AMD boards
 * [AtherosE2200Ethernet.kext](https://github.com/Mieze/AtherosE2200Ethernet)
    * For majority of Atheros Controllers
-* [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X)
-   * For majority of Realtek 
+* [RealtekRTL8111](https://github.com/Mieze/RTL8111_driver_for_OS_X)
+   * For Realtek's Gigabit Ethernet
+* [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+   * For Realtek's 2.5Gb Ethernet
    
 For legacy ethernet controllers, you have a couple to choose from(systems with these chips are generally from a time before the Core i series of processors):
 
 * [AppleIntelE1000e.kext](https://github.com/chris1111/AppleIntelE1000e)
 * [https://github.com/Mieze/RealtekRTL8100](https://github.com/Mieze/RealtekRTL8100)
 
-**Note**: Realtek L8200A and RTL8125 are outright unsupported, for a full list see [Networking section](/Networking.md)
+**Note**: Realtek L8200A is outright unsupported, for a full list see [Networking section](/Networking.md)
 
 **Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported
 
 ## USB
 
 
-For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work OOB with no other configuration besides a [USB map](https://usb-map.gitbook.io/project/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
+For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://usb-map.gitbook.io/project/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
 **Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://github.com/dortania/OpenCore-Desktop-Guide/blob/master/AMD/AMD-USB-map.md)
 
@@ -134,6 +136,6 @@ With this, main users affected:
 
 The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kalsr-fix)
 
-Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. This Memory Protection takes up half of the available space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
+Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. Specifically that any memory patches provided are overrided meaning they're never used. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix this by ensuring the patches are applied even after they're reset.
 
 

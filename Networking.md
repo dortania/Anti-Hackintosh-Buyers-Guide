@@ -1,10 +1,20 @@
 # Networking
 
-This section is specifically for dedicated NICs, generally most networking is supported either natively, like with Aquantia, or has drivers provided Mieze([IntelMausiEthernet.kext](https://github.com/Mieze/IntelMausiEthernet), [AtherosE2200Ethernet.kext](https://github.com/Mieze/AtherosE2200Ethernet) and [RealtekRTL8111.kext ](https://github.com/Mieze/RTL8111_driver_for_OS_X)). 
+This section is specifically for dedicated NICs, generally most networking is supported either natively, like with Aquantia, or has drivers provided Mieze:
+
+* [IntelMausiEthernet.kext](https://github.com/Mieze/IntelMausiEthernet)
+   * For majority of Intel Controllers
+* [SmallTree-I211-AT-patch](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
+   * For I211-AT which is commonly found on AMD boards
+* [AtherosE2200Ethernet.kext](https://github.com/Mieze/AtherosE2200Ethernet)
+   * For majority of Atheros Controllers
+* [RealtekRTL8111](https://github.com/Mieze/RTL8111_driver_for_OS_X)
+   * For Realtek's Gigabit Ethernet
+* [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+   * For Realtek's 2.5Gb Ethernet
 
 Certain consumer NICs don't have support such as:
 * Realtek L8200A(Only found in Asus boards)
-* Realtek RTL8125(2.5Gbe, mostly found on higher end gaming boards)
 
 Note: Newer Intel chipsets based off of I211-AT will need the [I211-AT SmallTree kext](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
 
