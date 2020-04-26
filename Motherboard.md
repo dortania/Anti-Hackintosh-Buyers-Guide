@@ -132,7 +132,7 @@ With this, main users affected:
 * H370
 * Z390
 
-The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kalsr-fix)
+The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kaslr-fix.html)
 
 Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. This Memory Protection takes up half of the available space for the kernel(2GB out of the 4GB it can use) which makes it very difficult to even find a spot for things to fit. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix much of this
 
