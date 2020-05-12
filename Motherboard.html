@@ -316,7 +316,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p><em>Last modified: Tue May 12 2020 14:41:52 GMT+0000 (Coordinated Universal Time)</em></p>
+<p><em>Last modified: Tue May 12 2020 14:51:34 GMT+0000 (Coordinated Universal Time)</em></p>
 </blockquote>
 <h1 id="motherboards"><a name="motherboards" class="plugin-anchor" href="#motherboards"><i class="fa fa-link" aria-hidden="true"></i></a>Motherboards</h1>
 <p>So with motherboards, the main thing to keep in mind is what controllers your system is running, specifically:</p>
@@ -335,7 +335,7 @@
 <li>AsRock(non-native USB controller, Weird Memory Layout)</li>
 <li>Gigabyte(Weird Memory Layout, requires KASLR fix)</li>
 </ul>
-<p>And main platform to avoid:</p>
+<p>And main platform to avoid (for stability and ease of setup):</p>
 <ul>
 <li>X79</li>
 <li>X99</li>
@@ -343,15 +343,17 @@
 <li>C612</li>
 <li>C621</li>
 <li>C422</li>
-<li>B360</li>
-<li>B365</li>
-<li>H310</li>
-<li>H370</li>
-<li>Z390</li>
+<li>B360 *</li>
+<li>B365 *</li>
+<li>H310 *</li>
+<li>H370 *</li>
+<li>Z390 *</li>
 </ul>
-<p>See below for more info</p>
+<p>Note (*): Only get these in case you need features from these that aren&apos;t found in Z370 or you want to overclock a 9th Gen CPU. Most of the issues with these have been corrected but they&apos;re still a big mess, see below.</p>
+<hr>
 <h2 id="audio"><a name="audio" class="plugin-anchor" href="#audio"><i class="fa fa-link" aria-hidden="true"></i></a>Audio</h2>
 <p>With audio, most boards are supported and you can find a more extensive list from <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs" target="_blank">AppleALC</a> for audio. VoodooHDA is another option for legacy users</p>
+<hr>
 <h2 id="ethernet"><a name="ethernet" class="plugin-anchor" href="#ethernet"><i class="fa fa-link" aria-hidden="true"></i></a>Ethernet</h2>
 <p>For ethernet basically all Gigabit NICs are supported(see below for more info)</p>
 <ul>
@@ -383,9 +385,11 @@
 </ul>
 <p><strong>Note</strong>: Realtek L8200A is outright unsupported, for a full list see <a href="Networking.html">Networking section</a></p>
 <p><strong>Note 2</strong>: For those planning on buying Intel&apos;s Z490 boards, please note that the i225-V NIC is not supported</p>
+<hr>
 <h2 id="usb"><a name="usb" class="plugin-anchor" href="#usb"><i class="fa fa-link" aria-hidden="true"></i></a>USB</h2>
 <p>For USB, things are <em>fairly</em> simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a <a href="https://dortania.github.io/USB-Map-Guide/" target="_blank">USB map</a>. For AsRock users with Intel CPUs, you&apos;ll need to use XHCI-unsupported.kext(which can be found within <a href="https://github.com/RehabMan/OS-X-USB-Inject-All" target="_blank">Rehabman&apos;s USBInjectAll&apos;s project</a>. Many H370, B360, H310 and X79/X99/X299 users can also benefit from this</p>
 <p><strong>Special AMD Note</strong>: Due to how macOS builds USBs, they <strong>must</strong> be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the <a href="https://dortania.github.io/USB-Map-Guide/" target="_blank">DSDT or SSDT</a></p>
+<hr>
 <h2 id="nvram"><a name="nvram" class="plugin-anchor" href="#nvram"><i class="fa fa-link" aria-hidden="true"></i></a>NVRAM</h2>
 <p>With NVRAM, things have been mostly fixed for consumer platforms thanks to <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PMC.dsl" target="_blank">SSDT-PMC</a>. Mainly relevant for the following:</p>
 <ul>
@@ -403,6 +407,7 @@
 <li>X99</li>
 <li>X299(Asus has working NVRAM though)</li>
 </ul>
+<hr>
 <h2 id="igpu"><a name="igpu" class="plugin-anchor" href="#igpu"><i class="fa fa-link" aria-hidden="true"></i></a>iGPU</h2>
 <p>So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires <a href="https://dortania.github.io/OpenCore-Desktop-Guide/extras/gpu-patches.html" target="_blank">manual BusID patches through WhateverGreen</a>. Main victims of this:</p>
 <ul>
@@ -412,6 +417,7 @@
 <li>H310</li>
 </ul>
 <p>Note that Z370 is not on the list, this is because the board is basically a Z270 so Apple&apos;s video map works fine with it</p>
+<hr>
 <h2 id="rtc-vs-awac"><a name="rtc-vs-awac" class="plugin-anchor" href="#rtc-vs-awac"><i class="fa fa-link" aria-hidden="true"></i></a>RTC vs AWAC</h2>
 <p>With RTC vs AWAC, macOS outright won&apos;t boot with systems that have their clocks using AWAC and most BIOS GUIs don&apos;t even show the option to change it. This is mainly seen in the following:</p>
 <ul>
@@ -429,6 +435,7 @@
 <li><a href="https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2" target="_blank">patch it out</a></li>
 </ul>
 <p>You can find more info here on <strong>how</strong> to fix it: <a href="https://khronokernel.github.io/Getting-Started-With-ACPI/" target="_blank">Getting started with ACPI</a></p>
+<hr>
 <h2 id="memory-maps-and-protections"><a name="memory-maps-and-protections" class="plugin-anchor" href="#memory-maps-and-protections"><i class="fa fa-link" aria-hidden="true"></i></a>Memory Maps and Protections</h2>
 <p>With this, main users affected:</p>
 <ul>
@@ -489,7 +496,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Motherboard","level":"1.4","depth":1,"next":{"title":"Storage","level":"1.5","depth":1,"path":"Storage.md","ref":"Storage.md","articles":[]},"previous":{"title":"GPU","level":"1.3","depth":1,"path":"GPU.md","ref":"GPU.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus","anchors","github-buttons","last-modified","medium-zoom"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"last-modified":{},"output":"_book","intopic-toc":{"label":"Navigation"},"addcssjs":{"css":[],"js":[]},"medium-zoom":{},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"github-edit":{"repo":"dortania/Anti-Hackintosh-Buyers-guide","branch":"master"},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","github-buttons":{"buttons":[{"user":"dortania","repo":"Anti-Hackintosh-Buyers-guide","type":"star","size":"large"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"search-plus":{}},"theme":"default","medium-zoom":{"margin":24,"background":"#363b40","scrollOffset":0},"pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"Motherboard.md","mtime":"2020-05-12T14:41:52.133Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T14:42:40.914Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Motherboard","level":"1.4","depth":1,"next":{"title":"Storage","level":"1.5","depth":1,"path":"Storage.md","ref":"Storage.md","articles":[]},"previous":{"title":"GPU","level":"1.3","depth":1,"path":"GPU.md","ref":"GPU.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus","anchors","github-buttons","last-modified","medium-zoom"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"last-modified":{},"output":"_book","intopic-toc":{"label":"Navigation"},"addcssjs":{"css":[],"js":[]},"medium-zoom":{},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"github-edit":{"repo":"dortania/Anti-Hackintosh-Buyers-guide","branch":"master"},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","github-buttons":{"buttons":[{"user":"dortania","repo":"Anti-Hackintosh-Buyers-guide","type":"star","size":"large"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"search-plus":{}},"theme":"default","medium-zoom":{"margin":24,"background":"#363b40","scrollOffset":0},"pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"Motherboard.md","mtime":"2020-05-12T14:51:34.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T14:52:29.970Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
