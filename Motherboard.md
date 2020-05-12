@@ -16,7 +16,7 @@ The main brand to avoid are:
 * AsRock(non-native USB controller, Weird Memory Layout)
 * Gigabyte(Weird Memory Layout, requires KASLR fix)
 
-And main platform to avoid:
+And main platform to avoid (for stability and ease of setup):
 
 * X79
 * X99
@@ -24,18 +24,21 @@ And main platform to avoid:
 * C612
 * C621
 * C422
-* B360
-* B365
-* H310
-* H370
-* Z390
+* B360 *
+* B365 *
+* H310 *
+* H370 *
+* Z390 *
 
+Note (*): Only get these in case you need features from these that aren't found in Z370 or you want to overclock a 9th Gen CPU. Most of the issues with these have been corrected but they're still a big mess, see below.
 
-See below for more info
+---
 
 ## Audio
 
 With audio, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
+
+---
 
 ##  Ethernet
 
@@ -61,14 +64,15 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 **Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported
 
-## USB
+---
 
+## USB
 
 For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/USB-Map-Guide/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
 **Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/USB-Map-Guide/)
 
-
+---
 
 ## NVRAM
 
@@ -88,6 +92,8 @@ There are however some boards without supported NVRAM, mainly HEDT and server bo
 * X99
 * X299(Asus has working NVRAM though)
 
+---
+
 ## iGPU
 
 So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://dortania.github.io/OpenCore-Desktop-Guide/extras/gpu-patches.html). Main victims of this:
@@ -98,6 +104,8 @@ So fun part about Coffee Lake is that Intel changed a lot in how the iGPU displa
 * H310
 
 Note that Z370 is not on the list, this is because the board is basically a Z270 so Apple's video map works fine with it
+
+---
 
 ## RTC vs AWAC
 
@@ -117,6 +125,8 @@ So we need to either:
 * [patch it out](https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2)
 
 You can find more info here on **how** to fix it: [Getting started with ACPI](https://khronokernel.github.io/Getting-Started-With-ACPI/)
+
+---
 
 ## Memory Maps and Protections
 
