@@ -15,8 +15,9 @@ This section is specifically for dedicated NICs, generally most networking is su
 
 Certain consumer NICs don't have support such as:
 * Realtek L8200A(Only found in Asus boards)
+* Intel I225-V 
 
-Note: Newer Intel chipsets based off of I211-AT will need the [I211-AT SmallTree kext](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
+For the latter, you can attempt to use IntelMausiEthernet with a device-id spoof. Example of this can be found here: [SchmockLord's Z490 build](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D)
 
 
 The issues come in when you either involve onboard server NICs or dedicated hardware like Mellanox's MNPA19-XTR 10Gbe NIC. You need to be quite vigilante and see if either the manufactures or the Hackintosh community have developed drivers, or instead, you can take the safe route and grab a 10Gbe Aquantia AQtion AQC-107 NIC as these are shipped in the iMacPro1,1, Macmini8,1 and MacPro7,1 so full native support. Note that [certain brands need patches](https://www.insanelymac.com/forum/topic/330614-aquantia-10-gb-ethernet-support-thread-10132-upwards/)
