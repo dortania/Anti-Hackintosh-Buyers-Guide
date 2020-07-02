@@ -46,7 +46,6 @@ Volta
 
 * Quadro GV100
 
-
 Lexa
 
 * RX 540/X

@@ -12,9 +12,18 @@ So with motherboards, the main thing to keep in mind is what controllers your sy
 
 The main brand to avoid are:
 
-* MSI(Weird Memory Layout that requires KASLR fix and just really poor ACPI programming, many Z390 systems are unbootable on Clover)
-* AsRock(non-native USB controller, Weird Memory Layout)
-* Gigabyte(Weird Memory Layout, requires KASLR fix)
+* MSI
+  * Weird Memory Layout that requires KASLR fix and just really poor ACPI programming, many Z390 systems are unbootable on Clover
+* AsRock
+  * non-native USB controller, Weird Memory Layout
+  * USB issues mainly for Z390 and older, Z490 are fine
+* Gigabyte
+  * Weird Memory Layout, requires KASLR fix
+  * Mainly Z390, Z370 and Z490 are known good
+* Asus
+  * USB issues on B460, H470 and Z490 
+  * Z390 and older are fine
+
 
 And main platform to avoid (for stability and ease of setup):
 
@@ -29,6 +38,9 @@ And main platform to avoid (for stability and ease of setup):
 * H310 *
 * H370 *
 * Z390 *
+* B460
+* H470
+* Z490
 
 Note (*): Only get these in case you need features from these that aren't found in Z370 or you want to overclock a 9th Gen CPU. Most of the issues with these have been corrected but they're still a big mess, see below.
 
@@ -62,7 +74,7 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 **Note**: Realtek L8200A is outright unsupported, for a full list see [Networking section](/Networking.md)
 
-**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported
+**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: [SchmockLord's Z490 build](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D)
 
 ---
 
@@ -70,13 +82,15 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/USB-Map-Guide/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
-**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/USB-Map-Guide/)
+**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/USB-Map-Guide/).
+
+**Special Asus 400 series note**: Thanks to Asus breaking the ACPI spec, you'll need to use [SSDT-RHUB](https://dortania.github.io/Getting-Started-With-ACPI/) to reset your ports.
 
 ---
 
 ## NVRAM
 
-With NVRAM, things have been mostly fixed for consumer platforms thanks to [SSDT-PMC](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PMC.dsl). Mainly relevant for the following:
+With NVRAM, things have been mostly fixed for consumer platforms thanks to [SSDT-PMC](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PMC.dsl). Mainly relevant for the following(Note 400 series like Z490 are not included):
 
 * Z390
 * H370
@@ -98,6 +112,9 @@ There are however some boards without supported NVRAM, mainly HEDT and server bo
 
 So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires [manual BusID patches through WhateverGreen](https://dortania.github.io/OpenCore-Desktop-Guide/extras/gpu-patches.html). Main victims of this:
 
+* Z490
+* H470
+* B460
 * Z390
 * H370
 * B360
@@ -111,12 +128,16 @@ Note that Z370 is not on the list, this is because the board is basically a Z270
 
 With RTC vs AWAC, macOS outright won't boot with systems that have their clocks using AWAC and most BIOS GUIs don't even show the option to change it. This is mainly seen in the following:
 
+* Z490
+* H470
+* B460
 * Z390
 * H370
 * B360
 * H310
 * Z370(mainly Gigabyte and AsRock, as they back-ported the clock. Other boards are fine)
 * X299(mainly ones released with 10th gen CPUs, AsRock and Gigabyte are the 2 main offenders)
+  * Asus has been back porting AWAC to even 2017 board with never BIOS updates, beware.
 
 So we need to either:
 
@@ -143,6 +164,9 @@ With this, main users affected:
 * H310
 * H370
 * Z390
+* B460
+* H470
+* Z490
 
 The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Desktop-Guide/extras/kaslr-fix.html)
 

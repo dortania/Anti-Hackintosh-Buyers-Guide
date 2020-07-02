@@ -11,7 +11,7 @@ And while not an issue anymore, do note that all of Apple's PCIe drives are 4k s
 **SSD/Storage Options that are NOT supported:**
 
 * Any eMMC based storage (commonly found in netbooks, some tablets and low end computer models.)
-* Samsung PM981 (commonly found in OEM systems like laptops)
+* Samsung PM981 and PM991(commonly found in OEM systems like laptops)
    * Even if PM981 has been fixed with [NVMeFix](https://github.com/acidanthera/NVMeFix/releases) ver. 1.0.2 there is still plenty of kernel panics issues
 * Micron 2200S
    * Many users have report boot issues with this drive
