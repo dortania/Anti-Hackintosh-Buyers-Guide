@@ -22,7 +22,8 @@ Common issues with AMD:
 * Not all USB ports work on some boards
    * This is due to not being assigned in ACPI, you need to manually add them in your DSDT
 * Delayed updates
-* **3rd Gen Threadripper doesn't work at all**
+* **3rd Gen Threadripper is not supported on bare-metal**
+  * KVM solution is the only work-around at this moment 
 
 AMD CPUs:
 * AMD Ryzen 1000 Series
