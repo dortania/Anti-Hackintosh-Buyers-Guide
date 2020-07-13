@@ -316,7 +316,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p><em>Last modified: Tue Jun 30 2020 03:38:12 GMT+0000 (Coordinated Universal Time)</em></p>
+<p><em>Last modified: Mon Jul 13 2020 17:42:07 GMT+0000 (Coordinated Universal Time)</em></p>
 </blockquote>
 <h1 id="motherboards"><a name="motherboards" class="plugin-anchor" href="#motherboards"><i class="fa fa-link" aria-hidden="true"></i></a>Motherboards</h1>
 <p>So with motherboards, the main thing to keep in mind is what controllers your system is running, specifically:</p>
@@ -331,9 +331,25 @@
 </ul>
 <p>The main brand to avoid are:</p>
 <ul>
-<li>MSI(Weird Memory Layout that requires KASLR fix and just really poor ACPI programming, many Z390 systems are unbootable on Clover)</li>
-<li>AsRock(non-native USB controller, Weird Memory Layout)</li>
-<li>Gigabyte(Weird Memory Layout, requires KASLR fix)</li>
+<li>MSI<ul>
+<li>Weird Memory Layout that requires KASLR fix and just really poor ACPI programming, many Z390 systems are unbootable on Clover</li>
+</ul>
+</li>
+<li>AsRock<ul>
+<li>non-native USB controller, Weird Memory Layout</li>
+<li>USB issues mainly for Z390 and older, Z490 are fine</li>
+</ul>
+</li>
+<li>Gigabyte<ul>
+<li>Weird Memory Layout, requires KASLR fix</li>
+<li>Mainly Z390, Z370 and Z490 are known good</li>
+</ul>
+</li>
+<li>Asus<ul>
+<li>USB issues on B460, H470 and Z490 </li>
+<li>Z390 and older are fine</li>
+</ul>
+</li>
 </ul>
 <p>And main platform to avoid (for stability and ease of setup):</p>
 <ul>
@@ -348,6 +364,9 @@
 <li>H310 *</li>
 <li>H370 *</li>
 <li>Z390 *</li>
+<li>B460</li>
+<li>H470</li>
+<li>Z490</li>
 </ul>
 <p>Note (*): Only get these in case you need features from these that aren&apos;t found in Z370 or you want to overclock a 9th Gen CPU. Most of the issues with these have been corrected but they&apos;re still a big mess, see below.</p>
 <hr>
@@ -384,14 +403,15 @@
 <li><a href="https://github.com/Mieze/RealtekRTL8100" target="_blank">https://github.com/Mieze/RealtekRTL8100</a></li>
 </ul>
 <p><strong>Note</strong>: Realtek L8200A is outright unsupported, for a full list see <a href="Networking.html">Networking section</a></p>
-<p><strong>Note 2</strong>: For those planning on buying Intel&apos;s Z490 boards, please note that the i225-V NIC is not supported</p>
+<p><strong>Note 2</strong>: For those planning on buying Intel&apos;s Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: <a href="https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D" target="_blank">SchmockLord&apos;s Z490 build</a></p>
 <hr>
 <h2 id="usb"><a name="usb" class="plugin-anchor" href="#usb"><i class="fa fa-link" aria-hidden="true"></i></a>USB</h2>
 <p>For USB, things are <em>fairly</em> simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a <a href="https://dortania.github.io/USB-Map-Guide/" target="_blank">USB map</a>. For AsRock users with Intel CPUs, you&apos;ll need to use XHCI-unsupported.kext(which can be found within <a href="https://github.com/RehabMan/OS-X-USB-Inject-All" target="_blank">Rehabman&apos;s USBInjectAll&apos;s project</a>. Many H370, B360, H310 and X79/X99/X299 users can also benefit from this</p>
-<p><strong>Special AMD Note</strong>: Due to how macOS builds USBs, they <strong>must</strong> be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the <a href="https://dortania.github.io/USB-Map-Guide/" target="_blank">DSDT or SSDT</a></p>
+<p><strong>Special AMD Note</strong>: Due to how macOS builds USBs, they <strong>must</strong> be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the <a href="https://dortania.github.io/USB-Map-Guide/" target="_blank">DSDT or SSDT</a>.</p>
+<p><strong>Special Asus 400 series note</strong>: Thanks to Asus breaking the ACPI spec, you&apos;ll need to use <a href="https://dortania.github.io/Getting-Started-With-ACPI/" target="_blank">SSDT-RHUB</a> to reset your ports.</p>
 <hr>
 <h2 id="nvram"><a name="nvram" class="plugin-anchor" href="#nvram"><i class="fa fa-link" aria-hidden="true"></i></a>NVRAM</h2>
-<p>With NVRAM, things have been mostly fixed for consumer platforms thanks to <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PMC.dsl" target="_blank">SSDT-PMC</a>. Mainly relevant for the following:</p>
+<p>With NVRAM, things have been mostly fixed for consumer platforms thanks to <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PMC.dsl" target="_blank">SSDT-PMC</a>. Mainly relevant for the following(Note 400 series like Z490 are not included):</p>
 <ul>
 <li>Z390</li>
 <li>H370</li>
@@ -411,6 +431,9 @@
 <h2 id="igpu"><a name="igpu" class="plugin-anchor" href="#igpu"><i class="fa fa-link" aria-hidden="true"></i></a>iGPU</h2>
 <p>So fun part about Coffee Lake is that Intel changed a lot in how the iGPU display out work. Specifically that macOS has no clue how to properly address them. There is a fix but requires <a href="https://dortania.github.io/OpenCore-Desktop-Guide/extras/gpu-patches.html" target="_blank">manual BusID patches through WhateverGreen</a>. Main victims of this:</p>
 <ul>
+<li>Z490</li>
+<li>H470</li>
+<li>B460</li>
 <li>Z390</li>
 <li>H370</li>
 <li>B360</li>
@@ -421,12 +444,18 @@
 <h2 id="rtc-vs-awac"><a name="rtc-vs-awac" class="plugin-anchor" href="#rtc-vs-awac"><i class="fa fa-link" aria-hidden="true"></i></a>RTC vs AWAC</h2>
 <p>With RTC vs AWAC, macOS outright won&apos;t boot with systems that have their clocks using AWAC and most BIOS GUIs don&apos;t even show the option to change it. This is mainly seen in the following:</p>
 <ul>
+<li>Z490</li>
+<li>H470</li>
+<li>B460</li>
 <li>Z390</li>
 <li>H370</li>
 <li>B360</li>
 <li>H310</li>
 <li>Z370(mainly Gigabyte and AsRock, as they back-ported the clock. Other boards are fine)</li>
-<li>X299(mainly ones released with 10th gen CPUs, AsRock and Gigabyte are the 2 main offenders)</li>
+<li>X299(mainly ones released with 10th gen CPUs, AsRock and Gigabyte are the 2 main offenders)<ul>
+<li>Asus has been back porting AWAC to even 2017 board with never BIOS updates, beware.</li>
+</ul>
+</li>
 </ul>
 <p>So we need to either:</p>
 <ul>
@@ -450,6 +479,9 @@
 <li>H310</li>
 <li>H370</li>
 <li>Z390</li>
+<li>B460</li>
+<li>H470</li>
+<li>Z490</li>
 </ul>
 <p>The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found <a href="https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/" target="_blank">here</a>. These issues can mostly be alleviated by calculating your slide value: <a href="https://dortania.github.io/OpenCore-Desktop-Guide/extras/kaslr-fix.html" target="_blank">Understanding and fixing &quot;Couldn&apos;t allocate runtime area&quot; errors</a></p>
 <p>Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. Specifically that any memory patches provided are overrided meaning they&apos;re never used. Luckily OpenCore introduced a new quirk called <code>ProtectUefiServices</code> which helps fix this by ensuring the patches are applied even after they&apos;re reset.</p>
@@ -496,7 +528,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Motherboard","level":"1.4","depth":1,"next":{"title":"Storage","level":"1.5","depth":1,"path":"Storage.md","ref":"Storage.md","articles":[]},"previous":{"title":"GPU","level":"1.3","depth":1,"path":"GPU.md","ref":"GPU.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus","anchors","github-buttons","last-modified","medium-zoom"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"last-modified":{},"output":"_book","intopic-toc":{"label":"Navigation"},"addcssjs":{"css":[],"js":[]},"medium-zoom":{},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"github-edit":{"repo":"dortania/Anti-Hackintosh-Buyers-guide","branch":"master"},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","github-buttons":{"buttons":[{"user":"dortania","repo":"Anti-Hackintosh-Buyers-guide","type":"star","size":"large"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"search-plus":{}},"theme":"default","medium-zoom":{"margin":24,"background":"#363b40","scrollOffset":0},"pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"Motherboard.md","mtime":"2020-06-30T03:38:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T03:39:02.166Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Motherboard","level":"1.4","depth":1,"next":{"title":"Storage","level":"1.5","depth":1,"path":"Storage.md","ref":"Storage.md","articles":[]},"previous":{"title":"GPU","level":"1.3","depth":1,"path":"GPU.md","ref":"GPU.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-plus","addcssjs","favicon-plus","anchors","github-buttons","last-modified","medium-zoom"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"last-modified":{},"output":"_book","intopic-toc":{"label":"Navigation"},"addcssjs":{"css":[],"js":[]},"medium-zoom":{},"fontsettings":{"theme":"night","family":"sans","size":2},"favicon-plus":{"appleTouchIconPrecomposed152":"","favicon":"","output":"_book"},"highlight":{},"github-edit":{"repo":"dortania/Anti-Hackintosh-Buyers-guide","branch":"master"},"favicon":"/icons/favicon.ico","appleTouchIconPrecomposed152":"/icons/appleTouchIconPrecomposed152.png","github-buttons":{"buttons":[{"user":"dortania","repo":"Anti-Hackintosh-Buyers-guide","type":"star","size":"large"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"search-plus":{}},"theme":"default","medium-zoom":{"margin":24,"background":"#363b40","scrollOffset":0},"pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":false}},"gitbook":"*"},"file":{"path":"Motherboard.md","mtime":"2020-07-13T17:42:07.049Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-13T17:42:53.192Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
