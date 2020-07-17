@@ -8,6 +8,10 @@ Common issues with AMD:
 * Adobe Products don't always work and there is no fix for lightroom at the moment
    * some fixes can be found here: [Adobe Fixes](https://adobe.amd-osx.com/)
    * Do note these fixes just disable functionality, they're not real fixes
+* Cubase, REAPER, and other audio software crashes on launch
+   * REAPER works *if* using the Clang build
+   * There is no fix for Cubase at the moment
+   * Waves plugins also cause crashes
 * Virtual Machine running off of AppleHV's framework will not work(ie: Parallels 15)
    * VirtualBox works fine as it doesn't use AppleHV
 * Docker broken
