@@ -1,5 +1,11 @@
 # Motherboards
 
+::: warning
+
+Currently the only motherboard not supported **at all** is the B550 boards from AMD, they require a KVM to operate.
+
+:::
+
 So with motherboards, the main thing to keep in mind is what controllers your system is running, specifically:
 
 * Audio Interface Controller
@@ -23,7 +29,12 @@ The main brand to avoid are:
 * Asus
   * USB issues on B460, H470 and Z490 
   * Z390 and older are fine
+ 
+So our overall recommendation for brands:
 
+* Z370 and older: Gigabyte, Asus and MSI
+* Z390: Asus and Gigabyte
+* Z490: Asus, Gigabyte and AsRock
 
 And main platform to avoid (for stability and ease of setup):
 
