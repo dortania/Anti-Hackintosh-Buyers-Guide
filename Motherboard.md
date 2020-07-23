@@ -30,11 +30,23 @@ The main brand to avoid are:
   * USB issues on B460, H470 and Z490 
   * Z390 and older are fine
  
+::: tip Recommendations
+
 So our overall recommendation for brands:
 
-* Z370 and older: Gigabyte, Asus and MSI
-* Z390: Asus and Gigabyte
-* Z490: Asus, Gigabyte and AsRock
+* Z370 and older: 
+  * Gigabyte 
+  * Asus
+  * MSI
+* Z390: 
+  * Asus 
+  * Gigabyte
+* Z490: 
+  * Asus, 
+  * Gigabyte 
+  * AsRock
+
+:::
 
 And main platform to avoid (for stability and ease of setup):
 

@@ -48,6 +48,14 @@ With Intel, the thanks to most of the CPUs being quite similar they have support
 * Intel X99/LGA 2011-V3
 * Intel X299/LGA-2066
 
+::: tip Recommendations
+
+So our overall recommendation for CPUs:
+
+* Semi-modern consumer Intel CPUs
+  * Ivy Bridge through Comet Lake are properly supported in macOS
+:::
+
 ## Unsupported CPUs
 
 So with outright unsupported CPUs, you're split into 2 camps: Either too old to run or too new that patches aren't supported

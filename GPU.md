@@ -15,8 +15,23 @@ And for those who are running unsupported GPUs, there's still hope for you! With
 Why I'm glad you asked, most manufactures actually have a pretty good track record with Hackintoshes but there's 2 specific brands to avoid. While it is possible to install with these GPUs, there still is a high possibility of issues arising like instability and black screens:
 * XFX(may work with CSM/legacy mode turned off, make sure it's in UEFI mode)
 * Powercolor
+* MSI(Navi specifically, Vega and Polaris are fine)
 
 Note: AMD Navi support is still quite finicky, with WhateverGreen not being updated yet
+
+::: tip Recommendations
+
+So our overall recommendation for GPUs:
+
+* Newer AMD GPUs: 
+  * Polaris 10 and 20(RX 4XX, 5XX)
+  * Vega 10 and 20(RX Vega 56, 64 and VII)
+  * Navi 10(RX 5XXX)
+* Overall brand recommendations:
+  * Sapphire
+  * Asus
+  * Gigabyte
+:::
 
 **GPUs that aren't supported AT ALL**
 

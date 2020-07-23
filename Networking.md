@@ -17,7 +17,7 @@ Certain consumer NICs don't have support such as:
 * Realtek L8200A(Only found in Asus boards)
 * Intel I225-V 
 
-For the latter, you can attempt to use IntelMausiEthernet with a device-id spoof. Example of this can be found here: [SchmockLord's Z490 build](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D)
+For the i225-V, you can actually spoof it to a i225LM which is officially supported: [Example](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#deviceproperties)
 
 
 The issues come in when you either involve onboard server NICs or dedicated hardware like Mellanox's MNPA19-XTR 10Gbe NIC. You need to be quite vigilante and see if either the manufactures or the Hackintosh community have developed drivers, or instead, you can take the safe route and grab a 10Gbe Aquantia AQtion AQC-107 NIC as these are shipped in the iMacPro1,1, Macmini8,1 and MacPro7,1 so full native support. Note that [certain brands need patches](https://www.insanelymac.com/forum/topic/330614-aquantia-10-gb-ethernet-support-thread-10132-upwards/)
@@ -26,7 +26,7 @@ The issues come in when you either involve onboard server NICs or dedicated hard
 
 **NICs cards to avoid**
 
-* Intel Server NICs(including both 1Gbe and 10Gbe, [there's work arounds for X520 and X540 NICs](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/))
+* Intel Server NICs(including both 1Gbe and 10Gbe, [there's work arounds for X520 and X540 NICs](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
 * HP Server NICs(including both 1Gbe and 10Gbe, generally rebranded Qlogic)
 * Dell Server NICs(including both 1Gbe and 10Gbe, generally rebranded Broadcom or Intel)
 * Mellanox NICs
