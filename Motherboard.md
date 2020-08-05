@@ -16,10 +16,20 @@ So with motherboards, the main thing to keep in mind is what controllers your sy
 * RTC vs AWAC
 * Memory Maps and Protections
 
-The main brand to avoid are:
+And in regards to AMD and Intel motherboards:
+
+* **Intel**: 
+  * Different brands have different levels of support, however overall all brands are boot-able assuming you're ok with tinkering(mentioned below).
+* **AMD**:
+  * Pretty much all AMD motherboards are unfavorable due to the [numerous hacks required to boot](https://github.com/AMD-OSX/AMD_Vanilla), however the brand itself won't affect support very much with macOS.
+  * Misc hardware support like Audio and Ethernet are still something to keep in mind.
+
+
+The main brands to avoid with **Intel** are:
 
 * MSI
   * Weird Memory Layout that requires KASLR fix and just really poor ACPI programming, many Z390 systems are unbootable on Clover
+  * OpenCore can boot these systems relatively easily
 * AsRock
   * non-native USB controller, Weird Memory Layout
   * USB issues mainly for Z390 and older, Z490 are fine
@@ -32,7 +42,7 @@ The main brand to avoid are:
  
 ::: tip Recommendations
 
-So our overall recommendation for brands:
+So our overall recommendation for brands(Intel):
 
 * Z370 and older: 
   * Gigabyte 
@@ -73,6 +83,8 @@ Note (*): Only get these in case you need features from these that aren't found 
 
 With audio, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
 
+**note**: AMD motherboard users will require VoodooHDA if you plan to use the onboard microphone header. Regulkar audio putput works however with AppleALC
+
 ---
 
 ##  Ethernet
@@ -97,7 +109,7 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 **Note**: Realtek L8200A is outright unsupported, for a full list see [Networking section](/Networking.md)
 
-**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: [SchmockLord's Z490 build](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D)
+**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: [Comet Lake i225-V spoof](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#starting-point)
 
 ---
 
