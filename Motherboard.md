@@ -2,7 +2,9 @@
 
 ::: warning
 
-Currently the only motherboard not supported **at all** is the B550 boards from AMD, they require a KVM to operate.
+~~Currently the only motherboard not supported **at all** is the B550 boards from AMD, they require a KVM to operate.~~
+
+Recent developments have resolved this issue with SSDT-CPUR, see [OpenCore Install Guide for more info](https://dortania.github.io/OpenCore-Install-Guide/)
 
 :::
 
@@ -21,7 +23,7 @@ And in regards to AMD and Intel motherboards:
 * **Intel**: 
   * Different brands have different levels of support, however overall all brands are boot-able assuming you're ok with tinkering(mentioned below).
 * **AMD**:
-  * Pretty much all AMD motherboards are unfavorable due to the [numerous hacks required to boot](https://github.com/AMD-OSX/AMD_Vanilla), however the brand itself won't affect support very much with macOS.
+  * Pretty much all AMD motherboards are unfavourable due to the [numerous hacks required to boot](https://github.com/AMD-OSX/AMD_Vanilla), however the brand itself won't affect support very much with macOS.
   * Misc hardware support like Audio and Ethernet are still something to keep in mind.
 
 
