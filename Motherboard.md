@@ -85,7 +85,7 @@ Note (*): Only get these in case you need features from these that aren't found 
 
 With audio, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
 
-**note**: AMD motherboard users will require VoodooHDA if you plan to use the onboard microphone header. Regulkar audio putput works however with AppleALC
+**Note**: AMD motherboard users will require VoodooHDA if you plan to use the onboard microphone header. However, regular audio output works with AppleALC
 
 ---
 
@@ -111,7 +111,7 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 **Note**: Realtek L8200A is outright unsupported, for a full list see [Networking section](/Networking.md)
 
-**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: [Comet Lake i225-V spoof](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#starting-point)
+**Note 2**: For those planning on buying Intel's Z490 boards, please note that the i225-V NIC is not supported officially without a device-id spoof. Example of this can be found here: [Comet Lake i225-V spoof](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#deviceproperties)
 
 ---
 
@@ -182,7 +182,7 @@ So we need to either:
 * [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-RTC0.dsl) 
 * [patch it out](https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2)
 
-You can find more info here on **how** to fix it: [Getting started with ACPI](https://khronokernel.github.io/Getting-Started-With-ACPI/)
+You can find more info here on **how** to fix it: [Getting started with ACPI](https://dortania.github.io/Getting-Started-With-ACPI/)
 
 ---
 
