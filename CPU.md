@@ -26,8 +26,8 @@ Common issues with AMD:
 * Not all USB ports work on some boards
    * This is due to not being assigned in ACPI, you need to manually add them in your DSDT
 * Delayed updates
-* **3rd Gen Threadripper is not supported on bare-metal**
-  * KVM solution is the only work-around at this moment 
+* ~~3rd Gen Threadripper is not supported on bare-metal~~
+  * Latest BIOS and OpenCore now boot with TRx40 CPUs
 
 AMD CPUs:
 * AMD Ryzen 1000 Series
@@ -72,13 +72,3 @@ This mainly consists of CPUs that are missing the SSE4.2 instruction set require
    * E9xxx
 
 Then there's the CPUs that are missing the SSE4.1 and older instruction sets, with these support is stuck an OS X 10.11 El Capitan
-
-
-**Too new to run**
-
-Well with this, the only current solution is to run it in a KVM, this is due to the current kernel patches not supporting 19h
-
-* 3rd Gen Threadripper
-   * 3960X
-   * 3970X
-   * 3990X(the macOS kernel doesn't even support more than 64 threads)
