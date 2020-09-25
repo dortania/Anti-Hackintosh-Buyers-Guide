@@ -85,7 +85,7 @@ Note (*): Only get these in case you need features from these that aren't found 
 
 With audio, most boards are supported and you can find a more extensive list from [AppleALC](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) for audio. VoodooHDA is another option for legacy users
 
-**note**: AMD motherboard users will require VoodooHDA if you plan to use the onboard microphone header. Regulkar audio putput works however with AppleALC
+**note**: AMD motherboard users will require VoodooHDA if you plan to use the onboard microphone header. Regular audio output works however with AppleALC
 
 ---
 
@@ -117,9 +117,9 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 ## USB
 
-For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/USB-Map-Guide/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
+For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/OpenCore-Post-Install/usb/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
-**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/USB-Map-Guide/).
+**Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/OpenCore-Post-Install/usb/).
 
 **Special Asus 400 series note**: Thanks to Asus breaking the ACPI spec, you'll need to use [SSDT-RHUB](https://dortania.github.io/Getting-Started-With-ACPI/) to reset your ports.
 
@@ -182,7 +182,7 @@ So we need to either:
 * [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-RTC0.dsl) 
 * [patch it out](https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2)
 
-You can find more info here on **how** to fix it: [Getting started with ACPI](https://khronokernel.github.io/Getting-Started-With-ACPI/)
+You can find more info here on **how** to fix it: [Getting started with ACPI](https://dortania.github.io/Getting-Started-With-ACPI/)
 
 ---
 
