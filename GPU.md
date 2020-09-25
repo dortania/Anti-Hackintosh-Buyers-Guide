@@ -35,6 +35,12 @@ So our overall recommendation for GPUs:
 
 **GPUs that aren't supported AT ALL**
 
+Ampere
+
+* RTX 3090
+* RTX 3080
+* RTX 3070
+
 Turing
 
 * Titan RTX
