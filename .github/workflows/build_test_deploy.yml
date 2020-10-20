@@ -1,8 +1,8 @@
 name: Build/Test/Deploy
 on:
   push:
-    branches:
-      - github-actions
+    branches-ignore:
+      - gh-pages
   workflow_dispatch:
   pull_request:
 jobs:
