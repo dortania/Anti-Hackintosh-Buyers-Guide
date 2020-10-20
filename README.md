@@ -1,23 +1,23 @@
-# Anti-Hackintosh-Buyers-Guide
+# Anti-Hackintosh Buyers Guide
 
 * [CPU](CPU.md)
-   * CPUs to avoid
+  * CPUs to avoid
 * [GPU](GPU.md)
-   * GPUs that aren't supported AT ALL
-   * GPUs to avoid
+  * GPUs that aren't supported AT ALL
+  * GPUs to avoid
 * [Motherboard](Motherboard.md)
-   * Chipsets to avoid
-   * Brands to avoid
+  * Chipsets to avoid
+  * Brands to avoid
 * [Storage](Storage.md)
-   * SSDs that aren't supported AT ALL
-   * SSDs to avoid
+  * SSDs that aren't supported AT ALL
+  * SSDs to avoid
 * [RAM](RAM.md)
 * [Cooler](Cooler.md)
 * [Networking](Networking.md)
-   * NICs cards to avoid
+  * NICs cards to avoid
 * [Wireless](Wireless.md)
-   * Wireless cards that aren't supported AT ALL
-   * Wireless cards to avoid
+  * Wireless cards that aren't supported AT ALL
+  * Wireless cards to avoid
 * [Power Supply](PSU.md)
 * [Case](Case.md)
 * [Thermal Paste](ThermalPaste.md)
