@@ -9,7 +9,6 @@ For wireless, keep in mind that macOS has a very limited selection for native Wi
 
 **Wireless cards to avoid**
 
-* Any USB based(Ralink and Realtek) as these generally aren't as reliable and some macOS functions like Hand-Off and AppleWatch Unlock may not function correctly
-
+* Any USB based (Ralink and Realtek) as these generally aren't as reliable and some macOS functions like Handoff and Apple Watch Unlock may not function correctly
 
 And for those who want a list of supported models can check out the [Wireless Buyers Guide](https://dortania.github.io/Wireless-Buyers-Guide/)

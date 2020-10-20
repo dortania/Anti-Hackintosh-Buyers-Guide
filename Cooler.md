@@ -1,6 +1,6 @@
 # Coolers
 
-The most popular liquid coolers are all-in-one (AIO). They are closed loop kits that come pre-assembled. If you're uncertain which AIO kit you should purchase, the YouTube channel GamersNexus provides extremely thorough reviews. The kits connect to your motherboard via the internal USB 2.0 header. When creating a USB map you need to consider this or you will not be able to control it. 
+The most popular liquid coolers are all-in-one (AIO). They are closed loop kits that come preassembled. If you're uncertain which AIO kit you should purchase, the YouTube channel GamersNexus provides extremely thorough reviews. The kits connect to your motherboard via the internal USB 2.0 header. When creating a USB map you need to consider this or you will not be able to control it.
 
 Excluding others and first generation AIO kits from Asetek, they have will have either volatile or persistent memory:
 

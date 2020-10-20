@@ -20,12 +20,11 @@ So with motherboards, the main thing to keep in mind is what controllers your sy
 
 And in regards to AMD and Intel motherboards:
 
-* **Intel**: 
-  * Different brands have different levels of support, however overall all brands are boot-able assuming you're ok with tinkering(mentioned below).
+* **Intel**:
+  * Different brands have different levels of support, however overall all brands are boot-able assuming you're OK with tinkering (mentioned below).
 * **AMD**:
-  * Pretty much all AMD motherboards are unfavourable due to the [numerous hacks required to boot](https://github.com/AMD-OSX/AMD_Vanilla), however the brand itself won't affect support very much with macOS.
+  * Pretty much all AMD motherboards are unfavorable due to the [numerous hacks required to boot](https://github.com/AMD-OSX/AMD_Vanilla), however the brand itself won't affect support very much with macOS.
   * Misc hardware support like Audio and Ethernet are still something to keep in mind.
-
 
 The main brands to avoid with **Intel** are:
 
@@ -39,23 +38,23 @@ The main brands to avoid with **Intel** are:
   * Weird Memory Layout, requires KASLR fix
   * Mainly Z390, Z370 and Z490 are known good
 * Asus
-  * USB issues on B460, H470 and Z490 
+  * USB issues on B460, H470 and Z490
   * Z390 and older are fine
- 
+
 ::: tip Recommendations
 
 So our overall recommendation for brands(Intel):
 
-* Z370 and older: 
-  * Gigabyte 
+* Z370 and older:
+  * Gigabyte
   * Asus
   * MSI
-* Z390: 
-  * Asus 
+* Z390:
+  * Asus
   * Gigabyte
-* Z490: 
-  * Asus, 
-  * Gigabyte 
+* Z490:
+  * Asus,
+  * Gigabyte
   * AsRock
 
 :::
@@ -89,21 +88,21 @@ With audio, most boards are supported and you can find a more extensive list fro
 
 ---
 
-##  Ethernet
+## Ethernet
 
 For ethernet basically all Gigabit NICs are supported(see below for more info)
 
 * [IntelMausiEthernet.kext](https://github.com/Mieze/IntelMausiEthernet)
-   * For majority of Intel Controllers
+  * For majority of Intel Controllers
 * [SmallTree-I211-AT-patch](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
-   * For I211-AT which is commonly found on AMD boards
+  * For I211-AT which is commonly found on AMD boards
 * [AtherosE2200Ethernet.kext](https://github.com/Mieze/AtherosE2200Ethernet)
-   * For majority of Atheros Controllers
+  * For majority of Atheros Controllers
 * [RealtekRTL8111](https://github.com/Mieze/RTL8111_driver_for_OS_X)
-   * For Realtek's Gigabit Ethernet
+  * For Realtek's Gigabit Ethernet
 * [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
-   * For Realtek's 2.5Gb Ethernet
-   
+  * For Realtek's 2.5Gb Ethernet
+
 For legacy ethernet controllers, you have a couple to choose from(systems with these chips are generally from a time before the Core i series of processors):
 
 * [AppleIntelE1000e.kext](https://github.com/chris1111/AppleIntelE1000e)
@@ -117,7 +116,7 @@ For legacy ethernet controllers, you have a couple to choose from(systems with t
 
 ## USB
 
-For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/OpenCore-Post-Install/usb/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [Rehabman's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
+For USB, things are *fairly* simple, most Ryzen/Matisse, Intel and AsMedia controllers work out of the box with no other configuration besides a [USB map](https://dortania.github.io/OpenCore-Post-Install/usb/). For AsRock users with Intel CPUs, you'll need to use XHCI-unsupported.kext(which can be found within [RehabMan's USBInjectAll's project](https://github.com/RehabMan/OS-X-USB-Inject-All). Many H370, B360, H310 and X79/X99/X299 users can also benefit from this
 
 **Special AMD Note**: Due to how macOS builds USBs, they **must** be defined somewhere in the ACPI tables. For some reason, many AMD boards just forget to do this and users end up with a lot of broken USB ports. There is a fix but it involves manually adding the ports to the [DSDT or SSDT](https://dortania.github.io/OpenCore-Post-Install/usb/).
 
@@ -178,8 +177,8 @@ With RTC vs AWAC, macOS outright won't boot with systems that have their clocks 
 
 So we need to either:
 
-* [force RTC with an SSDT](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-AWAC.dsl), 
-* [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-RTC0.dsl) 
+* [force RTC with an SSDT](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-AWAC.dsl),
+* [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-RTC0.dsl)
 * [patch it out](https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2)
 
 You can find more info here on **how** to fix it: [Getting started with ACPI](https://dortania.github.io/Getting-Started-With-ACPI/)
@@ -207,6 +206,4 @@ With this, main users affected:
 
 The issue these platforms face is that many rely on OsxAptioFix2Drv-free2000 which is now considered destructive to your system meaning build guides based of it are now invalid. More info can be found [here](https://www.reddit.com/r/hackintosh/comments/cfjyla/i_unleashed_a_plague_upon_you_guys_and_i_am_sorry/). These issues can mostly be alleviated by calculating your slide value: [Understanding and fixing "Couldn't allocate runtime area" errors](https://dortania.github.io/OpenCore-Install-Guide/extras/kaslr-fix.html)
 
-Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/Opencore are completely broken. Specifically that any memory patches provided are overrided meaning they're never used. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix this by ensuring the patches are applied even after they're reset.
-
-
+Oh but to add to the fun, Intel introduced Memory protections which mean a lot of the firmware fixes provided by AptioMemoryFix/OpenCore are completely broken. Specifically that any memory patches provided are overridden meaning they're never used. Luckily OpenCore introduced a new quirk called `ProtectUefiServices` which helps fix this by ensuring the patches are applied even after they're reset.
