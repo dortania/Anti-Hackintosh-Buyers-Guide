@@ -22,4 +22,9 @@ Samsung:
 
 * Samsung 970 Evo Plus (While not natively supported out of the box, a [firmware update from Samsung](https://www.samsung.com/semiconductor/minisite/ssd/download/tools/) will allow these drives to operate in macOS)
 
+Intel:
+
+* Intel 600p([Any fix for Intel 600p NVMe Drive? #1286](https://github.com/acidanthera/bugtracker/issues/1286))
+  * note the Intel 660p are fine
+
 For all NVMe SSDs, its recommended to use [NVMeFix.kext](https://github.com/acidanthera/NVMeFix) to fix power and energy consumption on these drives
