@@ -177,8 +177,8 @@ With RTC vs AWAC, macOS outright won't boot with systems that have their clocks 
 
 So we need to either:
 
-* [force RTC with an SSDT](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-AWAC.dsl),
-* [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-RTC0.dsl)
+* [force RTC with an SSDT](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-AWAC-DISABLE.dsl),
+* [create a fake systems clock](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-RTC0.dsl)
 * [patch it out](https://www.hackintosh-forum.de/forum/thread/39846-asrock-z390-taichi-ultimate/?pageNo=2)
 
 You can find more info here on **how** to fix it: [Getting started with ACPI](https://dortania.github.io/Getting-Started-With-ACPI/)
