@@ -61,19 +61,19 @@ Turing
 * Quadro RTX 5000
 * Quadro RTX 4000
 
-Volta
-
-* Titan V
-* Titan V CEO Edition
-
-* Quadro GV100
-
 Lexa
 
 * RX 540/X
 * RX 550/X
 
 **GPUs to avoid**
+
+Volta
+
+* Titan V
+* Titan V CEO Edition
+
+* Quadro GV100
 
 Pascal
 
