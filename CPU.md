@@ -7,7 +7,7 @@ While AMD CPUs can work but we advise against them due to numerous issues still 
 Common issues with AMD:
 
 * Adobe products don't always work and there is no fix for Lightroom at the moment
-  * some fixes can be found here: [Adobe Fixes](https://adobe.amd-osx.com/)
+  * some fixes can be found here: [Adobe Fixes](https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd)
   * Do note these fixes just disable functionality, they're not real fixes
 * Cubase, REAPER, and other audio software crashes on launch
   * REAPER works *if* using the Clang build
