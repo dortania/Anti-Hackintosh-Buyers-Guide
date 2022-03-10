@@ -15,6 +15,8 @@ And while not an issue anymore, do note that all of Apple's PCIe drives are 4K s
   * Even if PM981 has been fixed with [NVMeFix](https://github.com/acidanthera/NVMeFix/releases) version 1.0.2 there is still plenty of kernel panics issues
 * Micron 2200S
   * Many users have report boot issues with this drive
+* SK Hynix PC711
+  * The proprietary Hynix NVMe controller on this drive is not supported at all, and it will not boot with macOS
 
 **SSDs to avoid**
 
