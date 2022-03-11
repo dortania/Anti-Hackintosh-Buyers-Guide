@@ -12,6 +12,8 @@
   * SSDs that aren't supported AT ALL
   * SSDs to avoid
 * [RAM](RAM.md)
+  * General Guidance
+  * XMP and Sleep/Other Issues
 * [Cooler](Cooler.md)
 * [Networking](Networking.md)
   * NICs cards to avoid
