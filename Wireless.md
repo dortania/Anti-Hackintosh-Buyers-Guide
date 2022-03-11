@@ -14,7 +14,7 @@ For wireless, keep in mind that macOS has a very limited selection for native Wi
   * Many USB based WiFi cards will "work" but may be reliant on third party software and will not function natively
   * Some users have reported limited success with Bluetooth USB adapters but [YMMV](https://www.urbandictionary.com/define.php?term=ymmv)
 * Recent development efforts have enabled (limited) WiFi and Bluetooth functionality in macOS for Intel Wireless cards
-  * ***There are still major caveats to using Intel Wifi cards, including but not limited to issues with WiFi performance, broken Continuity/Handoff/Apple Watch Unlock, and more. Avoid them unless you are forced to use one, like if you are using a laptop with soldered WiFi or CNVi*** 
+  * ***There are still major caveats to using Intel Wifi cards, including but not limited to issues with WiFi performance, broken Continuity/Handoff/Apple Watch Unlock, and more. Avoid them unless you are forced to use one, like if you are using a laptop with soldered WiFi or CNVi***
   * Intel WiFi is enabled through either [**itwlm.kext** or **Airportitwlm.kext**](https://github.com/OpenIntelWireless/itlwm)
   * Intel Bluetooth is enabled through [**IntelBluetoothFirmware.kext**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) (paired with [**BlueToolFixup.kext**](https://github.com/acidanthera/BrcmPatchRAM) in macOS 12 and newer due to changes in Apple's Bluetooth stack)
   * Compatibility is always changing, so please refer to the [OpenIntelWireless Docs](https://openintelwireless.github.io) and [OpenIntelWireless GitHub Repo](https://github.com/OpenIntelWireless) for updated installation instructions and compatibility
