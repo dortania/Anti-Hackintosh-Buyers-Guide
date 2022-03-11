@@ -251,6 +251,7 @@ CFG-Lock
 CLKT
 CMD
 CMOS
+CNVi
 CONFIGURATORS
 CPU0
 CPUFriend
@@ -660,6 +661,7 @@ OpenCore
 OpenCore's
 OpenCorePkg
 OpenCorePkg's
+OpenIntelWireless
 OpenRuntime
 OpenShell
 OpenUsbKbDxe
