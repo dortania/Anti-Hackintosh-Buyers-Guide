@@ -300,6 +300,7 @@ DBG
 DC7900
 DMAR
 DMGs
+DOCP
 DRM
 DSDT
 DSDTs
@@ -1230,6 +1231,7 @@ x64
 x86
 x86-based
 xcpm
+XMP
 Как
 завести
 сервисы
