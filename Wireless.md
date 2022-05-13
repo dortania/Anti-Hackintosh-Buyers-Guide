@@ -4,8 +4,6 @@ For wireless, keep in mind that macOS has a very limited selection for native Wi
 
 **Wireless cards that aren't supported AT ALL**
 
-* ~~Any Intel based wireless(Bluetooth sometimes works but it's inconsistent and seems to be on a per system basis)~~
-* ~~Any Killer based wireless~~
 * Any Realtek based WiFi
 
 **Wireless cards to avoid**
