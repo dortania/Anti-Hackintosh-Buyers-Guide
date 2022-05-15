@@ -251,6 +251,7 @@ CFG-Lock
 CLKT
 CMD
 CMOS
+CNVi
 CONFIGURATORS
 CPU0
 CPUFriend
@@ -299,6 +300,7 @@ DBG
 DC7900
 DMAR
 DMGs
+DOCP
 DRM
 DSDT
 DSDTs
@@ -660,6 +662,7 @@ OpenCore
 OpenCore's
 OpenCorePkg
 OpenCorePkg's
+OpenIntelWireless
 OpenRuntime
 OpenShell
 OpenUsbKbDxe
@@ -1228,6 +1231,7 @@ x64
 x86
 x86-based
 xcpm
+XMP
 Как
 завести
 сервисы
