@@ -36,7 +36,13 @@ module.exports = {
         },]
     ],
     base: '/Anti-Hackintosh-Buyers-Guide/',
-
+    markdown: {
+        extendMarkdown: md => {
+            md.use(require('markdown-it-multimd-table'), {
+                rowspan: true,
+            });
+        }
+    },
 
     /**
      * Theme configuration, here is the default theme configuration for VuePress.
