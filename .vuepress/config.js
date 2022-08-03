@@ -111,7 +111,16 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 2,
             children: [
-                'CPU',
+                {
+                    title: 'CPU',
+                    path: '/cpu/CPU',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: [
+                        ['/cpu/Intel', 'Intel'],
+                        ['/cpu/AMD', 'AMD']
+                    ]
+                },
                 'GPU',
 				'Motherboard',
 				'Storage',
