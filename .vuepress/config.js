@@ -36,7 +36,13 @@ module.exports = {
         },]
     ],
     base: '/Anti-Hackintosh-Buyers-Guide/',
-
+    markdown: {
+        extendMarkdown: md => {
+            md.use(require('markdown-it-multimd-table'), {
+                rowspan: true,
+            });
+        }
+    },
 
     /**
      * Theme configuration, here is the default theme configuration for VuePress.
@@ -105,7 +111,16 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 2,
             children: [
-                'CPU',
+                {
+                    title: 'CPU',
+                    path: '/cpu/CPU',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: [
+                        ['/cpu/Intel', 'Intel'],
+                        ['/cpu/AMD', 'AMD']
+                    ]
+                },
                 'GPU',
 				'Motherboard',
 				'Storage',
